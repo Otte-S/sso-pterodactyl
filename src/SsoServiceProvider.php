@@ -1,9 +1,9 @@
 <?php
 
-namespace WemX\Sso;
+namespace BuiltByOtte\Sso;
 
 use Illuminate\Support\ServiceProvider;
-use WemX\Sso\Commands\GenerateSecretKey;
+use BuiltByOtte\Sso\Commands\GenerateSecretKey;
 
 class SsoServiceProvider extends ServiceProvider
 {
@@ -13,10 +13,10 @@ class SsoServiceProvider extends ServiceProvider
             GenerateSecretKey::class,
         ]);
 
-        // Registration of the configuration filess
+        // Registration of the configuration files
         $this->publishes([
-            __DIR__ . '/config/sso-wemx.php' => config_path('sso-wemx.php'),
-        ], 'sso-wemx');
+            __DIR__ . '/config/sso.php' => config_path('sso.php'),
+        ], 'sso');
 
         // Registration of routes
         $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
@@ -26,8 +26,8 @@ class SsoServiceProvider extends ServiceProvider
     {
         // Download configuration file
         $this->mergeConfigFrom(
-            __DIR__ . '/config/sso-wemx.php',
-            'sso-wemx'
+            __DIR__ . '/config/sso.php',
+            'sso'
         );
     }
 }
