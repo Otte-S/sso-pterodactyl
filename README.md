@@ -1,13 +1,12 @@
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/wemx/sso-pterodactyl.svg?style=flat-square)](https://packagist.org/packages/wemx/sso-pterodactyl)
-[![Total Downloads](https://img.shields.io/packagist/dt/wemx/sso-pterodactyl.svg?style=flat-square)](https://packagist.org/packages/wemx/sso-pterodactyl)
-
 # Laravel SSO
 
 Laravel SSO is a package for implementing Single Sign-On (SSO) authorizations in your Laravel project. This package allows you to authorize users on a Laravel panel from another website.
 
+> **Note:** This package is an adaptation of the abandoned [WemX SSO](https://github.com/WemXPro/sso-pterodactyl) package, updated for Laravel 10, 11, and 12 and maintained by BuiltByOtte.
+
 ## Requirements
 
-- PHP 8.0 or higher
+- PHP 8.1 or higher
 - Laravel 10 or higher
 
 ## Installation
@@ -15,22 +14,22 @@ Laravel SSO is a package for implementing Single Sign-On (SSO) authorizations in
 To install the package, use Composer:
 
 ```bash
-composer require wemx/sso-pterodactyl
+composer require builtbyotte/sso
 ```
 
 ## Configuration
 1. Publish the configuration file by running the following command:
 ```bash
-php artisan vendor:publish --tag=sso-wemx
+php artisan vendor:publish --tag=sso
 ```
-This command will publish the config/sso-wemx.php file, where you can set the secret key for SSO authorization.
+This command will publish the config/sso.php file, where you can set the secret key for SSO authorization.
 
 2. Generate new SSO key
 ```shell
-php artisan wemx:generate
+php artisan sso:generate
 ```
 
-Make sure to paste the SSO key on your WemX application
+Make sure to paste the SSO key in your environment configuration
 
 ## Usage
 
@@ -40,7 +39,7 @@ Make sure to paste the SSO key on your WemX application
 ```php
 public function loginPanel()
 {
-    $response = Http::get("https://panel.example.com/sso-wemx/", [
+    $response = Http::get("https://panel.example.com/sso/", [
         'sso_secret' => "xxxxxxx",
         'user_id' => 1
     ]);
@@ -62,6 +61,8 @@ After being redirected to the /sso-login route, the user will be automatically a
 
 If you have any questions or issues, please create a new issue in the project repository on GitHub.
 
-## License
+## LicenseLICENSE) file for details.
+
+This is an adaptation of the original WemX SSO package which was abandoned. Original author: GIGABAIT93
 
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/GIGABAIT93/LaravelSso/blob/main/LICENSE) file for details.
