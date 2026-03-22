@@ -1,6 +1,6 @@
-# Laravel SSO
+# Pterodactyl SSO
 
-Laravel SSO is a package for implementing Single Sign-On (SSO) authorizations in your Laravel project. This package allows you to authorize users on a Laravel panel from another website.
+Pterodactyl SSO is a package for implementing Single Sign-On (SSO) authorizations in your Laravel project. This package allows you to authorize users on a Laravel panel from another website.
 
 > **Note:** This package is an adaptation of the abandoned [WemX SSO](https://github.com/WemXPro/sso-pterodactyl) package, updated for Laravel 10, 11, and 12 and maintained by BuiltByOtte.
 
@@ -61,8 +61,8 @@ After being redirected to the /sso-login route, the user will be automatically a
 
 If you have any questions or issues, please create a new issue in the project repository on GitHub.
 
-## LicenseLICENSE) file for details.
+## License file for details.
 
-This is an adaptation of the original WemX SSO package which was abandoned. Original author: GIGABAIT93
+This is an adaptation of the original WemX SSO package which was abandoned. Original author: WemX-Pro
 
-This project is licensed under the MIT License. See the [LICENSE](https://github.com/GIGABAIT93/LaravelSso/blob/main/LICENSE) file for details.
+This project is licensed under the MIT License.
